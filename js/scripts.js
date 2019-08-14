@@ -186,7 +186,7 @@ const addItem = (ingredientArray) => {
 
     if(result1 === undefined){
       stagingIngredientArray.push(ingredientArray);
-      const $itemRemoveButton = (`<li>${searchInput.value}<button class="remove">Remove</button></li>`);
+      const $itemRemoveButton = (`<li>${ingredientArray.ingredient}<button class="remove">Remove</button></li>`);
       // append paragraph to the body element
       $('.stagingUl').append($itemRemoveButton);
       amountTextInput.value = '';

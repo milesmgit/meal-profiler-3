@@ -149,6 +149,7 @@ populateIngredientArray = (ingredientObject, checkboxId, ingredientSearchResult,
     ingredientArray.push(ingredientObject);
     ingredientSearchResult.style.color = 'blue';
 
+
   } else {
     // returns the index [i] of the <tomatoIngredient> in the <ingredientArray>
     let removeIngredient = ingredientArray.indexOf(ingredientObject);
@@ -189,6 +190,8 @@ const addItem = (ingredientArray) => {
       // append paragraph to the body element
       $('.stagingUl').append($itemRemoveButton);
       amountTextInput.value = '';
+      checkBox.checked = false;
+      searchInput.value = '';
     }
 
   }
@@ -238,7 +241,7 @@ $('.stagingUl').on('click', 'button', function(event){
 
 
 
-
+// 6)
 
 //  create a print function to write to the DOM using getElementByID
 const print1 = message => document.getElementById('output').innerHTML = message;

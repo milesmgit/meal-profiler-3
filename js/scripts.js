@@ -6,8 +6,7 @@ const searchInput = document.getElementById("searchInput");
 
 
 
-// 1)
-// Execute a function when the user releases a key on the keyboard, or
+// 1)  Execute a function when the user releases a key on the keyboard, or
 // presses the search button.
 searchInput.addEventListener("keyup", function(event) {
   // Number 13 is the "Enter" key on the keyboard
@@ -101,7 +100,7 @@ if(result.state === 'Liquid'){
 });
 
 
-// 3)
+// 3)  this function informs the values of the ingredient object.
 
 // this function runs if the checkbox with id #checkbox is clicked
 
@@ -163,7 +162,8 @@ populateIngredientArray = (ingredientObject, checkboxId, ingredientSearchResult,
 
 
 
-// 4)
+// 4)  this function pushes an ingredient object onto a staging array for use in calculating the results.
+//     also clears the input boxes and checkboxes for next item.
 
 // this array will hold a list of objects to be passed into the calculate meal button function.
 const stagingIngredientArray = [];
@@ -192,15 +192,20 @@ const addItem = (ingredientArray) => {
       amountTextInput.value = '';
       checkBox.checked = false;
       searchInput.value = '';
+      ingredientSearchResult.style.color = 'black';
+    }
+    else {
+      amountTextInput.value = '';
+      checkBox.checked = false;
+      searchInput.value = '';
+      ingredientSearchResult.style.color = 'black';
     }
 
   }
 }
 
 
-
-
-// 5)
+// 5)     remove event that updates the array and removes the items from the staging area
 
 // instead of using event.target i can type <this>.  they are equivalent.
 
@@ -222,26 +227,8 @@ $('.stagingUl').on('click', 'button', function(event){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 6)
+// 6)  function that calculates the values of the ingredients in the array passed to it
+//     function will output values.  TODO:  need to output detailed results up top in the black area.
 
 //  create a print function to write to the DOM using getElementByID
 const print1 = message => document.getElementById('output').innerHTML = message;
